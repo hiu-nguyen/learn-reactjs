@@ -1,0 +1,21 @@
+.todo-list {
+    background-color: rgb(192, 255, 216);
+    text-decoration: none;
+    opacity: 0.5;
+    & > li {
+        cursor: pointer;
+        color: pink;
+    }
+
+    & > li.Completed {
+        color: aqua;
+        font-style: italic;
+        text-decoration: line-through;
+    }
+
+    & > li.New {
+        color: red;
+        font-style: oblique;
+        text-decoration: double;
+    }
+}

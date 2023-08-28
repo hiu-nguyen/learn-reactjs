@@ -68,3 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###
+
+- dùng porp khi giá trị đó không thay đổi và nhận được từ components cha xuống components con, không thay đổi được giá trị của props khi đã chuyền đi, muốn thay đôi thì phải thay đổi từ components cha, chuyền xuống có j thì render ra cái đấy
+- dùng state khi giá trị thay đổi theo thời gian, của bản thân components đó tạo ra, tự động quản lý và xử lý, có thể thay đổi được
+
+###
+
+-nên dùng PureComponents vì PureComponents trước khi render ra sẽ so sánh với các props và state trước và sau, nếu khác nhau thì render ra còn giống nhau thì sẽ ko rerender lại
+
+###
+
+- Mounting(Tạo ra)
+- Updapting(Thay đổi)
+- Unmounting(Hủy bỏ)
+
+### lifecycle
+
+- constructor dùng để khai báo thuộc tính hoặc state
+- componentDidMount khởi tạo dữ liệu cho components(gọi API, biến đổi dữ liệu, cập nhật state), gửi tracking page view(GA, FacebookPixel, ...)
+- componentsWillUnmount hay được dùng để clear timeout hoặc interval, reset dữ liệu trên redux
+- componentsDidUpdate (ko nên sử dụng setstate trong DidUpdate)
+
+### rounter-dom
+
+- useHistory() dùng để di chuyển qua trang khác, dùng đề navigate
+- useLocation() dùng để trả về các Location object hiện tại, thường được xử lý với URL form
+- useParams() được dùng khi muốn xử lý path params
+- useRouteMatch() khi muốn làm nested routing
